@@ -1,2 +1,2 @@
 # auto-tests-course
-my learning in auto tests
+my first repository which I use for learning
