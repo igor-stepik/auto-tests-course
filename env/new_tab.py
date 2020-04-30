@@ -1,3 +1,6 @@
+from selenium import webdriver
+import math
+
 """
 1) Открыть страницу http://suninjuly.github.io/redirect_accept.html
 2) Нажать на кнопку
@@ -5,16 +8,14 @@
 4) Пройти капчу для робота и получить число-ответ
 """
 
-from selenium import webdriver
-import math
 
 def calc(x):
-    return str(math.log(abs(12*math.sin(int(x)))))
+    return str(math.log(abs(12 * math.sin(int(x)))))
+
 
 browser = webdriver.Chrome()
 link = "http://suninjuly.github.io/redirect_accept.html"
 browser.get(link)
-
 
 button = browser.find_element_by_class_name("btn")
 button.click()
@@ -22,7 +23,6 @@ button.click()
 new_tab = browser.window_handles[1]
 
 browser.switch_to.window(new_tab)
-
 
 a = browser.find_element_by_id("input_value")
 num = a.text
